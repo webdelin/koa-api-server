@@ -6,10 +6,10 @@
     "author": "Wendelin Gerein",
     "license": "MIT",
     "scripts": {
-        "start": "babel-node api/app/server",
-        "dev": "nodemon --exec 'yarn lint && yarn start'",
-        "lint": "eslint api/app",
-        "lint:fix": "eslint --fix api/app"
+        "start": "babel-node app/server",
+        "dev": "nodemon --exec 'yarn lint:fix && yarn start'",
+        "lint": "eslint app",
+        "lint:fix": "eslint --fix app"
     },
     "devDependencies": {
         "babel-cli": "^6.26.0",
@@ -23,6 +23,8 @@
         "nodemon": "^2.0.13"
     },
     "dependencies": {
+        "config": "^3.3.6",
+        "keymirror": "^0.1.1",
         "koa": "^2.13.3",
         "koa-json": "^2.0.2",
         "koa-router": "^10.1.1"
