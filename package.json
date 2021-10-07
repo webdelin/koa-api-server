@@ -24,6 +24,7 @@
     },
     "dependencies": {
         "config": "^3.3.6",
+        "dotenv": "^10.0.0",
         "keymirror": "^0.1.1",
         "koa": "^2.13.3",
         "koa-json": "^2.0.2",
