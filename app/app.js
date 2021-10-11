@@ -1,12 +1,17 @@
 import Koa from 'koa';
-import KoaRouter from 'koa-router';
-import json from 'koa-json';
+import connectorsInit from './connectors';
+import initHandlers from './handlers';
+import modules from './modules';
+import AppError from './helpers/appError';
+
+connectorsInit();
+global.AppError = AppError;
+
 const app = new Koa();
-const router = new KoaRouter();
-app.use(json());
-/* app.use(async(ctx) => {
-    ctx.body = '<h1>KOA Server</h1>';
-}); */
-router.get('/test', (ctx) => (ctx.body = 'TEST'));
-app.use(router.routes()).use(router.allowedMethods());
+initHandlers(app);
+app.use(modules);
+
+app.use(async (ctx) => {
+  ctx.body = '<h1>KOA API</h1>';
+});
 export default app;

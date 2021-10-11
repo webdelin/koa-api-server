@@ -2,5 +2,8 @@
   "env": "development",
   "mongo": {
     "uri": "mongo-development"
+  },
+  "jwt": {
+    "secret": "g3i4544tur64ng35h6089ghw0909nbw094n0n049"
   }
 }
